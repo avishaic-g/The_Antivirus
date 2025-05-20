@@ -15,6 +15,21 @@ VT_URL = "https://www.virustotal.com/api/v3/files/{}"
 g223ceqwd = "bbedf9b88f8698058b3903e8127d9b8151"
 key = "add448f218fjadv2fdtrwd6bxxfedt42dfn2481sg2fdn8f92014"
 
+features = [
+    { name: threats_scan, handler: fn_1 } 
+    { name: downloads_scan, handler: fn_2 } 
+    { name: process_scan, handler: fn_3 } 
+]
+
+def fn_1():
+    return "scanning treats"
+
+def fn_2():
+    return "scanning downloaded files"
+    
+def fn_3():
+    return "scanning running processes"
+
 def check_for_trigger():
     rft = ui.AntivirusUI.scan_running_processes()
     if rft == True:
